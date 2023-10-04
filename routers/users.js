@@ -27,22 +27,22 @@ usersRouter.get("/", async (req, res) => {
     }
 })
 
-// usersRouter.get("/:?sort=true", async (req, res) => {
-//     try {
-//     const {rows} = await pool.query('SELECT * FROM users ORDER BY id ASC');
-//     res.json(rows)
-//     } catch(err){
-//         res.status(500).json(err)
-//     }
-// })
-// usersRouter.get("/:?sort=true2", async (req, res) => {
-//     try {
-//     const {rows} = await pool.query('SELECT * FROM users ORDER BY id DESC');
-//     res.json(rows)
-//     } catch(err){
-//         res.status(500).json(err)
-//     }
-// })
+usersRouter.get("/:?sort=true", async (req, res) => {
+    try {
+    const {rows} = await pool.query('SELECT * FROM users ORDER BY id ASC');
+    res.json(rows)
+    } catch(err){
+        res.status(500).json(err)
+    }
+})
+usersRouter.get("/:?sort=true2", async (req, res) => {
+    try {
+    const {rows} = await pool.query('SELECT * FROM users ORDER BY id DESC');
+    res.json(rows)
+    } catch(err){
+        res.status(500).json(err)
+    }
+})
 
 
 
